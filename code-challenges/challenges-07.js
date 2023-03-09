@@ -110,59 +110,49 @@ const cvFormatter = (arr) => {
     // The filter() method creates a new array filled with elements that pass a test provided by a function
     // each object inside the array should contain FullName "FirstName+LastName" & tech 
 
-    // .filter applicant over ONE year expierance
-    // .map the remaining people to a new object with different properties mean with exp 1 and up
 
-    // const applicant = [
-    //     fullName,
-    //     arr.age,
-    //     arr.yearsOfExperience,
-    //     arr.tech
-    // ];
+    let applicantArray = [];//push the result of fullName and tech just
+    let fullName;
+    
+    //for Loop to write fullName with exp. one year and without null name 1+2
+    // want just yearsOfExperiance greater than ONE so
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].yearsOfExperience > 1) {
+            console.log("firstCondition");
+              // another condition for if firstName or lastName ==Null 
+            if (arr[i].firstName == null) {
+                fullName = arr[i].lastName;
+                //just print lastName
+                console.log("firstNameNull");
+            } else if (arr[i].lastName == null) {
+                fullName = arr[i].firstName;//just print firstName
+                console.log("lastNameNull");
+            } else { 
+                // Do the concatination for fullName
+                fullName = arr[i].firstName + " " + arr[i].lastName;
+                //fullName = `${arr[i].firstName} ${arr[i].lastName}`;
+                console.log("fullName");
+            }
 
+                      
 
-    // let fullName = arr.firstName + ' ' + arr.lastName;
-
-    // if ((arr.firstName && arr.lastName) != null) {
-    //     return fullName;
-    // }
-    // for (let i = 0; i > applicant.length; i++) {
-    //     const filteredArr = arr.filter(arr => arr.yearsOfExperience > 1).map(arr => {
-    //         return `The full1name is ${fullName} and the tech is ${tech}`;
-    //     });
-    // }
-
-
-    //use for-in loop 
-
-    // if (arr.yearsOfExperience > 1) {
-    //     return `The full1name is ${fullName} and the tech is ${tech}`;
-    // }
-    //_____________________________________________________________________________________
-    function applicantArr(firstName, lastName, age, yearsOfExperience, tech) {
-
-        firstName = arr.firstName,
-            lastName = arr.lastName,
-            age = 0,
-            yearsOfExperience = arr.yearsOfExperience,
-            tech = arr.tech
-
-    }
-
-    const fullName = arr.firstName + ' ' + arr.lastName;
-
-
-
-    for (let i = 0; i > applicantArr.length; i++) {
-        if (arr.yearsOfExperience > 1) {
-            return `The full1name is ${fullName} and the tech is ${tech}`;
-
+             let tech = arr[i].tech;
+             // My Output
+             let object = {
+                "fullName": fullName,
+                "tech"    : tech
+               
+            };
+            applicantArray.push(object);
         }
-        // const filteredArr = arr.filter(arr => arr.yearsOfExperience > 1).map(arr => {
-        //     return `The full1name is ${fullName} and the tech is ${tech}`;
-        // });
+       
     }
-}
+    
+   return  applicantArray;   
+
+};
+
+
 
 
 
