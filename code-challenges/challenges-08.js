@@ -33,7 +33,6 @@ const customerAndAge = (obj) => {
   // foe _in loop to extracts the age and name of each customer, 
   for(let name in obj){
     resultArray.push(`Customer Name :${name} , Age :${obj[name]}`);
-
   }
   return resultArray;
 };
