@@ -69,40 +69,43 @@ const oddFiltration = (arr) => {
 //  Note that:
 //  1- Full name is first name + last name
 //  2- If one of the names is null dont add it to the full name
-let applicantArray = [];
-let fullName;
+// let filterArray;
 const cvsFiltration = (arr) => {
     // write your code here
+    let filterArray=arr.filter(n =>{
+        return filterArray.yearsOfExperience>4 && filterArray.tech ==="JS";}).map(filterArray=>{
+            return {fullName :`${filterArray.firstName} ${filterArray.LastName}`, tech:filterArray.tech }
+        })
 
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i].yearsOfExperience > 4) {
+    // for (let i = 0; i < arr.length; i++) {
+        // if (arr[i].yearsOfExperience > 4) {
+//const filteredData = cvData.filter(item => item.confidence > 0.8);
+        //    const filtrcv= applicantArray.filter(item => item.yearsOfExperience >4);
 
-            arr.filter();
+    //         if (arr[i].firstName == null) {
+    //             fullName = arr[i].lastName;
+    //             //just print lastName
+    //             console.log("firstNameNull");
+    //         } else if (arr[i].lastName == null) {
+    //             fullName = arr[i].firstName;//just print firstName
+    //             console.log("lastNameNull");
+    //         } else {
+    //             // Do the concatination for fullName
+    //             fullName = arr[i].firstName + " " + arr[i].lastName;
+    //             //fullName = `${arr[i].firstName} ${arr[i].lastName}`;
+    //             console.log("fullName");
+    //         }
+    //         let tech = arr[i].tech;
+    //         let object = {
+    //             "fullName": fullName,
+    //             "tech": tech
 
-            if (arr[i].firstName == null) {
-                fullName = arr[i].lastName;
-                //just print lastName
-                console.log("firstNameNull");
-            } else if (arr[i].lastName == null) {
-                fullName = arr[i].firstName;//just print firstName
-                console.log("lastNameNull");
-            } else {
-                // Do the concatination for fullName
-                fullName = arr[i].firstName + " " + arr[i].lastName;
-                //fullName = `${arr[i].firstName} ${arr[i].lastName}`;
-                console.log("fullName");
-            }
-            let tech = arr[i].tech;
-            let object = {
-                "fullName": fullName,
-                "tech": tech
-
-            };
-            applicantArray.push(object);
-        }
-    }
+    //         };
+    //         applicantArray.push(object,applicantArray.filter(arr[i].yearsOfExperience >4));
+    //     }
+    // }
     
-    return  applicantArray;  
+    return  filterArray;  
 }
 // -------------------------------------------------------------------------------------------------------
 
