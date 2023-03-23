@@ -120,10 +120,10 @@ const cvsFiltration = (arr) => {
 
 // Input: ['car', 'boy', 'spy', 'building', 'why', 'dry' ]
 // Output: ['spy', 'why', 'dry']
-// 
 
+const vowels = ['a', 'e', 'i', 'o', 'u'];
 const vowelsFiltration = (arr) => {
-    // write your code here
+  return arr.filter(word => !vowels.some(vowel => word.includes(vowel)));
 }
 // -------------------------------------------------------------------------------------------------------
 
